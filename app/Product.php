@@ -31,4 +31,13 @@ class Product extends Model
 
         return '/images/products/default.gif';
     }
+
+    public function getCategoryNameAttribute()
+    {
+        // si la categoria del producto existe
+        if ($this->category)
+            return $this->category->name;
+        return 'General';
+        
+    }
 }
